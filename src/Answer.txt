@@ -1,0 +1,35 @@
+En los resultados de la simulacion se puede ver que hay un gran desbalance en cuanto a la cantidad
+de aviones aterrizados y la cantidad de aviones enviados a otros aeropuertos.
+
+Por ejemplo, en 24hs, en promedio (4 repeticiones) hay:
+    112 aviones aterrizados
+    184 minutos de espera maximos
+    462 aviones no aterrizados
+
+De aqui podemos ver que hay casi 4 veces mas aviones sin aterrizar que aterrizados. Para evitar que esto pase hay varias cosas
+que se pueden modificar en cuanto a las instalaciones del aeropuerto.
+
+    a. Clausurar una pista:
+        Al tener 2 pistas abiertas, el aeropuerto recibe 2 solicitudes de aterrizaje cada 5 minutos. Al tener un espacio
+        de solo 4 en el buffer para mandar a las Gates, en 15 minutos se llenaria. Para que luego de que se haya llenado
+        haya lugar para solo uno mas, deben pasar como minimo 15 minutos (el tiempo de embarque de pasajeros en una Golondrina
+        en una Gate con manga). De ahi en adelante, los tiempos necesarios para que se desaloje una gate suben hasta los 90
+        minutos. Por tanto es muy dificil tener lugar para un avion por aterrizar en cuanto a tiempos, mas aun si son dos.
+
+        Al cerrar una pista, los aviones posibles a aterrizar bajarian a 1 solo, y de esta forma habria que manejar solo uno
+        en tierra en vez de 2.
+
+    b. Expandir el espacio del Hub:
+        Esta opcion tiene pros y cons. Por un lado, habrian menos aviones no aterrizados ya que habria mas lugar para alojarlos
+        en el buffer. Sin embargo, esto no cambia el rate de funcionamiento de las gates, asi que el tiempo de espera aumentaria.
+
+        De esta manera, se tienen menos aviones no aterrizados, pero mas tiempos de espera en el Hub.
+
+    c. Aumentar la cantidad de Gates.
+        Con el espacio actual del Hub, el tiempo de espera es bastante alto (184 min en promedio, mas de 3h).
+        Una forma de optimizar esto es subiendo la cantidad de Gates, ya que de esa forma la cola seria distribuida mas
+        rapido. Un buen analisis que podria hacerse es, en caso de agregar mas gates al aeropuerto, si ponerle mangas o no.
+        Esto podria suponerse de las probabilidades del fin de cada tipo de avion. Sin embargo, podria tambien analizarse en
+        la simulacion para resultados mas experimentales.
+
+En conclusion, la mejor forma de tener la mayor cantidad de aviones aterrizados es con una ampliacion de las gates del aeropuerto.
